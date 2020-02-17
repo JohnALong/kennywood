@@ -1,5 +1,0 @@
-{
-    "python.pythonPath": "KennywoodEnv/bin/python3",
-    "python.linting.pylintEnabled": true,
-    "git.ignoreLimitWarning": true
-}
