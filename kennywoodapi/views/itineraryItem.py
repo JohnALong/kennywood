@@ -62,9 +62,7 @@ class ItineraryItems(ViewSet):
 
         new_itinerary_item = Itinerary()
         new_itinerary_item.starttime = request.data["starttime"]
-        # new_itinerary_item.customer_id = request.auth.user.id
-        # change back to above line after all views tested
-        new_itinerary_item.customer_id = request.data["customer_id"]
+        new_itinerary_item.customer_id = request.auth.user.id
         new_itinerary_item.attraction_id = request.data["ride_id"]
 
         new_itinerary_item.save()
@@ -81,8 +79,6 @@ class ItineraryItems(ViewSet):
         """
         itinerary_item = Itinerary.objects.get(pk=pk)
         itinerary_item.starttime = request.data["starttime"]
-        itinerary_item.customer_id = request.data["customer_id"]
-        itinerary_item.attraction_id = request.data["ride_id"]
         itinerary_item.save()
 
         return Response({}, status=status.HTTP_204_NO_CONTENT)
